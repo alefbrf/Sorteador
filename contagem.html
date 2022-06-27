@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Sorteio</title>
+</head>
+
+<body>
+    <img id="gif" src="" width="100%" type="video/gif">
+    <section class="content">
+
+        <div class="result" id="key"></div>
+<button onclick="clearLS()" class="reset"><a href="index.html">Voltar ao inicio</a></button>
+
+    </section>
+    
+    
+    </div>
+
+</body>
+<script type="text/javascript">
+    let reset = document.querySelector(".reset")
+    let qtd = localStorage.getItem("qtd")
+    let v2 = localStorage.getItem("v2")
+
+    let v1 = 1;
+    let optionsNumbers = [];
+
+    const letterToElement = function (char) {
+        let e = document.createElement("SPAN");
+        let t = document.createTextNode(char);
+        e.appendChild(t);
+        e.className += "caixa";
+        return e;
+    };
+    function ExibeNumber(qtd) {
+        const qtdNumbers = qtd;
+        for (let i = 0; i < qtdNumbers; i += 1) {
+            geraAleatorio(v1, v2);
+        }
+    }
+
+    function geraAleatorio(v1, v2) {
+        let gerad = Math.floor((Math.random() * (v2 - v1 + 1)) + v1);
+        optionsNumbers.push(gerad);
+    }
+    let seconds, count = 11;
+    function countDown() {
+        seconds = setInterval(() => {
+            (count)
+            count -= 1;
+            const resultado = document.querySelector('.result');
+            resultado.style.fontSize = '30px';
+            resultado.style.fontFamily = 'Montserrat'
+            resultado.style.color = '#fff';
+            resultado.innerHTML = count;
+            console.log(count)
+            if (count === 0) {
+                resultado.innerHTML = ''
+            }
+        }, 1000)
+    }
+
+    function stop() {
+        setTimeout(() => {
+            clearInterval(seconds)
+            ExibeNumber(qtd);
+        }, 11500)
+    }
+    function arrayFinal() {
+        setTimeout(function () {
+            console.log(optionsNumbers)
+            let container = document.getElementById("key");
+            optionsNumbers.map(l => letterToElement(l))
+                .forEach(e => container.appendChild(e));
+            document.getElementById("gif").src = "confete-2.gif";
+            reset.style.display = "flex"
+        }, 11600)
+
+    }
+    function clearLS() {
+        localStorage.clear()
+    }
+    countDown()
+    stop()
+    arrayFinal()
+
+</script>
+
+</html>
