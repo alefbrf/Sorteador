@@ -54,9 +54,9 @@
             (count)
             count -= 1;
             const resultado = document.querySelector('.result');
-            resultado.style.fontSize = '30px';
-            resultado.style.fontFamily = 'Montserrat'
-            resultado.style.color = '#fff';
+            resultado.style.fontSize = '35px';
+            resultado.style.fontFamily = 'sans-serif'
+            resultado.style.color = '#0b1460 ';
             resultado.innerHTML = count;
             console.log(count)
             if (count === 0) {
@@ -78,7 +78,7 @@
             optionsNumbers.map(l => letterToElement(l))
                 .forEach(e => container.appendChild(e));
             document.getElementById("gif").src = "confete-2.gif";
-            reset.style.display = "flex"
+            reset.style.display = "flex";
         }, 11600)
 
     }
