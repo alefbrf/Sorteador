@@ -54,11 +54,10 @@
             (count)
             count -= 1;
             const resultado = document.querySelector('.result');
-            resultado.style.fontSize = '35px';
+            resultado.style.fontSize = '90px';
             resultado.style.fontFamily = 'sans-serif'
             resultado.style.color = '#0b1460 ';
             resultado.innerHTML = count;
-            console.log(count)
             if (count === 0) {
                 resultado.innerHTML = ''
             }
@@ -73,12 +72,13 @@
     }
     function arrayFinal() {
         setTimeout(function () {
-            console.log(optionsNumbers)
+            const resultado = document.querySelector('.result');
             let container = document.getElementById("key");
             optionsNumbers.map(l => letterToElement(l))
                 .forEach(e => container.appendChild(e));
             document.getElementById("gif").src = "confete-2.gif";
             reset.style.display = "flex";
+            resultado.style.fontSize = '35px';
         }, 11600)
 
     }
