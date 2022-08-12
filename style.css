@@ -101,9 +101,7 @@ input{
 .button1:hover{
     color: snow;
     text-shadow: 0.1px 0.2px 0.2px #fff;
-    transition: 1s;
-     transform: rotateY(12deg); 
-     rotate:-95deg;   
+    transition: 1s;  
 }
 
 .result{
