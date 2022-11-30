@@ -70,7 +70,7 @@ input{
 
 
 
-.button1{
+.button{
     padding: 8px 14px;
     cursor:pointer;
     border: none;
@@ -98,7 +98,7 @@ input{
 
 
 
-.button1:hover{
+.button:hover{
     color: snow;
     text-shadow: 0.1px 0.2px 0.2px #fff;
     transition: 1s;  
